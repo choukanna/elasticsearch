@@ -1,0 +1,3 @@
+{
+    "template": "{ \"_source\" : { {{#exclude}}\"excludes\": {{#toJson}}excludeFields{{/toJson}}{{/exclude}}{{#include}}{{#exclude}}, {{/exclude}}\"includes\" : {{#toJson}}includeFields{{/toJson}} {{/include}} },\"query\": {\"bool\" : {\"filter\" : {\"bool\":{\"should\" : [ {\"terms\" : {\"liveURL\" : {{#toJson}}link{{/toJson}}, \"_name\":\"liveURL\" }}, {\"terms\" : {\"historicalURL\" : {{#toJson}}link{{/toJson}}, \"_name\":\"historicalURL\" }} ]}} }}, \"size\": \"{{size}}\"}"
+}

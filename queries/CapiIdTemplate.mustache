@@ -1,0 +1,3 @@
+{
+    "template": "{  \"_source\" : { {{#exclude}}\"excludes\": {{#toJson}}excludeFields{{/toJson}}{{/exclude}}{{#include}}{{#exclude}}, {{/exclude}}\"includes\" : {{#toJson}}includeFields{{/toJson}} {{/include}} }, \"query\": {\"bool\" : {\"filter\" : {\"terms\" : {\"id\" : {{#toJson}}id{{/toJson}} }}}}, \"size\": \"{{size}}\"}"
+}

@@ -1,0 +1,3 @@
+{
+	"template":"{   \"_source\": {\"excludes\": [\"bodyStructured\", \"bodyText\", \"keypointsStructured\", \"keypointsText\", \"content\", \"parent\" ]},\"query\": {   \"constant_score\": {    \"filter\": {   \"bool\": {   \"should\":   [ {{#assocIds}}     {  \"terms\":  { \"id\" :   {  \"id\": \"{{id }}\", \"index\": \"{{index }}\", \"type\": \"{{type }}\",  \"path\" : \"content.id\"  }  }   } {{^isLast}},{{/isLast}}   {{/assocIds}}  ], \"must\":{ \"terms\": { \"type\" : [\"image\", \"creator\"]}} }  }  } }, \"size\": {{size}} }"
+}

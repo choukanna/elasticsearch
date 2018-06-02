@@ -1,0 +1,3 @@
+{
+    "template": "{  \"_source\" : {\"includes\" : [\"id\"]}, \"query\": {\"bool\" : {\"filter\" : {\"terms\" : {\"symbol\" : {{#toJson}}symbol{{/toJson}} }}}}, \"size\": \"{{size}}\"}"
+}
